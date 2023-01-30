@@ -6,7 +6,7 @@ togglbutton.render(
   function (elem) {
     const numElem = $('#content h2');
     const titleElem = $('.subject h3') || '';
-    const projectElem = $('h1');
+    const projectElem = $(".current-project");
     let description;
 
     if ($('.toggl-button')) {
@@ -27,7 +27,7 @@ togglbutton.render(
     const link = togglbutton.createTimerLink({
       className: 'redmine',
       description: description,
-      projectName: projectElem && projectElem.textContent
+      projectName: projectElem && projectElem[0] && projectElem[0].textContent
     });
 
     $('#content h2').appendChild(link);
